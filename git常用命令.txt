@@ -1,0 +1,40 @@
+初始化git仓库---- git init
+添加文件到git仓库
+	1. git add <file>
+	2. git commit -m <message>
+显示仓库当前的状态---- git status
+查看上次修改的内容---- git diff
+显示所有提交过的版本信息---- git log --pretty=online
+查看所有分支的所有操作记录---- git reflog
+查看文件内容: cat <file>
+回退 git reset
+	回退一步: git reset --hard HEAD^
+	回退两部: git reset --hard HEAD^^
+	回退到某个版本 git reset --hard 版本号
+撤销操作---- git checkout -- file
+				1.修改后还没有被放到暂存区,回到和版本库一模一样的状态后的状态
+				2.提交到缓存区之后,作了修改,撤销便回到提交缓存区之后的状态
+将缓存区的修改回退到工作区---- git reset HEAD file
+删除文件  1.删除本地文件---- rm file
+		  2.删除版本库文件---- git rm file
+		  注意: 如果本地文件删除,版本仓库文件还在,想恢复本地文件的话通过 git checkout -- file
+		  
+远程仓库
+	关联一个远程库---- git remote add origin git@server-name:path/repo-name.git 例如: git remote add origin git@github.com:zzzxxxxxx/learngit
+	第一次推送到远程仓库---- git push -u origin master
+	以后正常推送---- git push origin master
+	克隆一个远程库---- git clone git@github.com:server-name/repo-name.git 例如: git clone git@github.com:zzzxxxxxx/gitskills.git
+	
+分支操作
+	查看分支：git branch
+	创建分支：git branch <name>
+	切换分支：git checkout <name>
+	创建+切换分支：git checkout -b <name>
+	合并某分支到当前分支：git merge <name>
+	删除分支：git branch -d <name>
+	注意: 使用----git merge --no-ff -m <message> branch 合并分支时,使用普通模式合并
+
+git储藏---- git stash
+	查看现有的储藏---- git stash list
+	恢复储藏文件---- git stash apply(恢复后储藏文件不删除,需要在执行 git stash drop 来删除)
+					 git stash pop (恢复后储藏文件同时删除)
