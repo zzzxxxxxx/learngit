@@ -43,3 +43,23 @@ git储藏---- git stash
 
 查看远程库信息---- git remote
 		更详细信息---- git remote -v
+多人协作
+		推送分支---- git push origin <branch-name>
+		在本地创建和远程分支对应的分支---- git checkout -b <branch-name> origin/<branch-name>
+		建立本地分支和远程分支的关联---- git branch --set-upstream branch-name origin/<branch-name>
+		抓取分支---- git pull
+		注意: 如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream-to <branch-name> origin/<branch-name>。
+		
+标签管理
+	创建标签:
+		1.切换到需要增加标签的分支
+		2.添加标签---- git tag <tag-name>
+	查看所有便签---- git tag
+	通过commit id添加标签 git tag <tag-name> <commit-id>
+	查看标签信息---- git show <tag-name>
+	创建带有说明的标签---- git tag -a <tag-name> -m <message> <commit-id>
+	删除标签---- git tag -d <tag-name>
+	推送某个标签到远程---- git push origin <tag-name>
+	推送全部未推送的标签到远程 git push origin --tags
+	注意: 删除推送到远程的标签: 1.先删除本地标签 git tag -d <tag-name>
+								2.删除远程标签 git push origin :refs/tags/<tag-name>
