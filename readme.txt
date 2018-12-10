@@ -8,3 +8,6 @@ Creating a new branch is quick and simple.
 
 
 这里是dev分支的内容
+
+
+this is my otherlearninggit file
